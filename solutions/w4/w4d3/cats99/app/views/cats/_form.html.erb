@@ -1,0 +1,33 @@
+<% @cat.errors.full_messages.each do |error| %>
+  <p style='color: red;'><b><%= error %></b></p>
+<% end %>
+
+<%= form_for(@cat) do %>
+  <label for='cat_name'>Name</label>
+  <input type='text' name='cat[name]' id='cat_name' value='<%= @cat.name %>'>
+  <br>
+  <label for='cat_color'>Color</label>
+  <select name='cat[color]'>
+    <% Cat::COLORS.each do |color| %>
+      <option value="<%= color %>" <%= "selected" if color == @cat.color %>>
+        <%= color %>
+      </option>
+    <% end %>
+  </select>
+  <br>
+  <label for='cat_sex'>Sex</label>
+    <% ["Male", "Female"].each do |sex| %>
+      <label>
+        <input type="radio" name="cat[sex]" 
+          value="<%= sex %>" <%= "checked" if sex == @cat.sex %>>
+        <%= sex %>
+      </label>
+    <% end %>
+  <br>
+  <label for='cat_birthday'>Birthday</label>
+  <input type='date' name='cat[birthday]' id='cat_birthday' 
+    value='<%= @cat.birthday %>' >
+  <br>
+
+  <input type='submit'>
+<% end %>

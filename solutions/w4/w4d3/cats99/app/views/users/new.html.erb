@@ -1,0 +1,16 @@
+<h3>Sign Up</h3>
+
+<% @user.errors.full_messages.each do |error| %>
+  <p style='color: red;'><b><%= error %></b></p>
+<% end %>
+
+<%= form_for(@user) do %>
+  <label for="user_username">username</label>
+  <input type='text' name='user[username]' id='user_username' 
+    value='<%= @user.username %>'>
+  <br>
+  <label for='user_password'>password</label>
+  <input type='password' name='user[password]' id='user_password'>
+  <br>
+  <input type='submit'>
+<% end %>

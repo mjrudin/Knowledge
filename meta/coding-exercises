@@ -1,0 +1,72 @@
+Pre-Entrance Coding Exercises
+
+:::: Practice Problems ::::
+
+  Cats and Hats
+    Write a function which takes a number of cats and outputs which cats have hats.  Initially, none of the cats have hats.  You walk down the line of cats, stopping at every cat, taking off its hat if it has one or putting on a hat if it doesn't have one.  On the second round, you only stop at every second cat [eg #2, #4, #6], on the third round you stop at every third cat [eg #3, #6, #9...].  You continue this until you've done as many round as there are cats.  Your function should output an array containing booleans indicating whether each cat has a hat or not by the end.
+    e.g. cats_and_hats(10) == [0, 3, 8]
+
+  Ordered Vowels 
+    Write a method ordered_vowel_words that takes a string of lowercase words and returns a string with just the words containing all vowels (excluding "y") in alphabetical order
+    e.g. ordered_vowel_words("fabulous absentee abstemious enemy anarchy festival anemious animus facetious complacent ferocious")  ==> "abstemious anemious facetious ferocious"
+
+  Scientific Notation 
+    Write a method sci_not that converts an integer or decimal into scientific notation
+    e.g. sci_not(.245) == "2.45E-1"  (use "E" instead of "10^")
+  
+  String Permutations 
+    Write a function which takes in a string and returns all permutations of its letters
+    e.g. "ab" returns ["ab", "ba"]
+  
+  Year digits 
+    Write a function no_repeats which takes a range of years and outputs those years which do not have any repeated digits
+    e.g. no_repeats( [1980, 1987] ) == [1980, 1982, 1983, 1984, 1985, 1986, 1987]
+  
+  Letter Counts
+    Write a function letter_count that takes a string of words and returns a hash listing each letter and its frequency
+    e.g. letter_count("cats are fun", { :a => 2, :c => 1, :e=> 1, :f => 1, :n => 1, :r => 1, :s => 1, :t => 1, :u => 1 }
+  
+  Wonky Coins
+    Catsylvanian money is a strange thing… they have a coin for every denomination (including zero).  A change machine in Catsylvania takes any coin of value N and returns 3 new coins, valued at N/2, N/3 and N/4 (rounded down).  Write a method that returns the number of coins you are left with if you take all non-zero coins and keep feeding them back into the machine, 
+    e.g. wonky_coins(5) == 11  # ( 2, 1, 1 => 1, 0, 0, 0, 0, 0, 0, 0, 0, => 0,0,0,0,0,0,0,0,0,0,0, or 11 coins.
+  
+  Morse Code 
+    Build a function morse_encode that takes in a word and outputs the morse code for it.  http://www.w1wc.com/pdf_files/international_morse_code.pdf  Put two spaces between words and one space between letters.  
+    eg. morse_encode("cat hat") => "-.-.  .- -  …. .- -" 
+      >> Test for punctuation and numbers
+  
+  Word unscrambler
+    Write a function that takes two inputs: a scrambled word and a dictionary of real words.  Your program must then output all words that our scrambled word can unscramble to, 
+    e.g. unscramble("cdo",["god","cat", "thing", "fit", "dog"] == ["god", "dog"]
+  
+  Nearest Larger 
+    Write a function nearest_larger which takes an array and an index.  It returns the index of the nearest number in that array which is larger than the number at the inputted index.  Choose the earlier (left-most) number if there is a tie.  
+    eg. nearest_larger( [1, 5 ,8 ,4 ,9, 10, 4, 6], 2) == 4
+  
+  Rectangle Intersection 
+    Write a function rec_intersection that takes the bottom left and top right coordinate pairs for two rectangles and returns either the rectangle, line, or point of their intersection (a point can be represented as a rectangle with identical start and end points).  
+    eg. rec_intersection( [ [1,1], [5,4] ] , [ [2,2], [3,5] ) == [ [ 2,2 ], [3,4] ]
+  
+  Bubble Sort
+    Write a function which will sort an array of integers using the "bubble sort" methodology. (http://en.wikipedia.org/wiki/Bubble_sort)
+    e.g. bubble_sort( [1, 5, 8, 3,2 ,7 ,8, 1]) == [1, 1, 2, 3, 5, 7, 8, 8]
+  
+
+:::: Exam Problems ::::
+
+* Digital Root
+    Sum the digits of a positive integer. Then sum the digits of the resulting number.  Keep repeating until there is only one digit in the result, called the "digital root".  Do not use string conversion within your method.
+    e.g. digital_root(4322) == 2
+
+* Caesar Cipher
+    Back in the good old days, you used to be able to write a darn near uncrackable code by simply taking each letter of a message and incrementing it by a fixed number, so "abc" by 2 would look like "cde", wrapping around back to "a" when you pass "z".  Write a function which will take a message and an increment amount and outputs the encoded message.  Assume lowercase.
+    e.g. caesar_cipher("catz hatz", 2) == "ecvb jcvb"
+  
+* Common Substrings 
+    Write a function common_substrings that takes two strings and returns the longest common substring 
+    e.g. common_substrings("zooglensnuck", "lenscrafters") == "lens"
+
+* Fibonacci
+    Write a function fibs which returns a given number of elements from the fibonnacci sequence.  In the sequence, each next number is the sum of the two preceding numbers.
+    e.g. fibs(7) == [ 0, 1, 1, 2, 3, 5, 8 ]
+    

@@ -1,0 +1,21 @@
+<h3>Index</h3>
+
+<% if @cats.length > 0 %>
+
+<ul>
+  <% @cats.each do |cat| %>
+    <li>
+      <%= link_to cat.name, cat_path(cat) %>
+    </li>
+  <% end %>
+</ul>
+
+<% else %>
+
+<p>No cats yet...</p>
+
+<% end %>
+
+<% if logged_in? %>
+  <%= link_to "+ New Cat", new_cat_path %>
+<% end %>

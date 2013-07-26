@@ -1,0 +1,17 @@
+<h3>New Cat Rental Request <small>(<%= @cat.name %>)</small></h3>
+
+<% @request.errors.full_messages.each do |error| %>
+  <p style='color: red;'><b><%= error %></b></p>
+<% end %>
+
+<%= form_for([@cat, @request]) do %>
+  <label for="request_begin_date">Begin</label>
+  <input type='date' id='request_begin_date' 
+    name='cat_rental_request[begin_date]' value='<%= @request.begin_date %>'>
+  <br>
+  <label for="request_end_date">End</label>
+  <input type='date' id='request_end_date' 
+    name='cat_rental_request[end_date]' value='<%= @request.end_date %>'>
+  <br>
+  <input type='submit'>
+<% end %>

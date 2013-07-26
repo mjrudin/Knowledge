@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  birthday: 2013-06-06
+  color: MyString
+  name: MyString
+  sex: MyString
+  owner: 1
+
+two:
+  birthday: 2013-06-06
+  color: MyString
+  name: MyString
+  sex: MyString
+  owner: 1

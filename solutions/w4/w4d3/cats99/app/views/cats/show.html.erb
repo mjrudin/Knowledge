@@ -1,0 +1,35 @@
+<h3>
+  <%= @cat.name %>
+  <small>
+    <% if logged_in? && current_user.id == @cat.user_id %>
+      <%= link_to "edit", edit_cat_path(@cat) %>
+    <% end %>
+  </small>
+</h3>
+
+<pre>
+  <%= @cat.inspect %>
+</pre>
+
+<h4>Requests</h4>
+<% if @cat.cat_rental_requests.count > 0 %>
+  <ol>
+  <% @cat.cat_rental_requests.each do |req| %>
+    <li>
+      <%= req.begin_date %> -> <%= req.end_date %> (<b><%= req.status %></b>)
+      <% if logged_in? && current_user == @cat.user && req.status == "undecided" %>
+        <% [["Approve", "approved"],["Deny", "denied"]].each do |action, value| %>
+          <%= form_for([@cat, req], html: {style: "display: inline;"}) do %>
+            <input type='hidden' name='cat_rental_request[status]' 
+              value='<%= value %>'>
+            <input type='submit' value='<%= action %>'>
+          <% end %>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+  </ol>
+<% else %>
+  <p>No requests yet...</p>
+<% end %>
+<%= link_to "+ New Request", new_cat_cat_rental_request_path(@cat) %>

@@ -1,0 +1,15 @@
+<ol>
+  <% _(photos).each(function(photo){ %>
+    <li>
+      <a href='#'>
+        <img src='<%= photo.url %>' class='photo-thumb' data-id='<%= photo.id %>' style='max-height: 20%;'>
+      </a>
+    </li>
+  <% }) %>
+</ol>
+
+<form>
+  <label for='photo-url'>url: </label>
+  <input type='text' id='photo-url' name='url'>
+  <input type='submit'>
+</form>
